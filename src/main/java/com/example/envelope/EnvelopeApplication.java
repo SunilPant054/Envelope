@@ -9,5 +9,4 @@ public class EnvelopeApplication {
     public static void main(String[] args) {
         SpringApplication.run(EnvelopeApplication.class, args);
     }
-
 }
