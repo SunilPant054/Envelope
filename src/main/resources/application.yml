@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: Envelope
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/envelope
+    username: envelope_user
+    password: envelope_pass
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: false
+    locations: classpath:db/migration
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    url: ${spring.datasource.url}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080

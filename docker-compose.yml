@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: envelope-postgres
+    environment:
+      POSTGRES_DB: envelope
+      POSTGRES_USER: envelope_user
+      POSTGRES_PASSWORD: envelope_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - envelope_pgdata:/var/lib/postgresql/data
+
+volumes:
+  envelope_pgdata:
